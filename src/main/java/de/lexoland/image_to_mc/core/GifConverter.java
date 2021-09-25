@@ -235,7 +235,7 @@ public class GifConverter {
 					return;
 				}
 		    }
-		    System.out.println("Creating api functions...");
+		    System.out.println("Creating utility functions...");
 		    File createFunction = new File(gifDir.getAbsolutePath() + "/create.mcfunction");
 		    try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(createFunction), StandardCharsets.UTF_8))) {
 		    	writer.write("# ");

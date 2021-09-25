@@ -14,7 +14,8 @@ public class ConvertDialog extends JDialog {
         super(parent);
         this.onCancel = onCancel;
         setContentPane(contentPane);
-//        setModal(true);
+        setModalityType(ModalityType.MODELESS);
+        parent.setEnabled(false);
         setTitle("Converting...");
         setIconImages(null);
 
@@ -47,6 +48,12 @@ public class ConvertDialog extends JDialog {
     private void onCancel() {
         onCancel.run();
         dispose();
+    }
+
+    @Override
+    public void dispose() {
+        getParent().setEnabled(true);
+        super.dispose();
     }
 
     public static ConvertDialog openDialog(JFrame parent, Runnable onCancel) {
