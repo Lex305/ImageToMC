@@ -1269,7 +1269,7 @@ public class MainFrame extends JFrame {
 		gbc_lblNewLabel_3.gridy = 3;
 		contentPane.add(lblNewLabel_3, gbc_lblNewLabel_3);
 		
-		JLabel lblNewLabel_2 = new JLabel("Github: lexoland.net/discord");
+		JLabel lblNewLabel_2 = new JLabel("Github: Lex305/ImageToMC");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.RIGHT);
 		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
 		gbc_lblNewLabel_2.anchor = GridBagConstraints.EAST;
