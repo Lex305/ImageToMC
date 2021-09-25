@@ -1192,7 +1192,6 @@ public class MainFrame extends JFrame {
 			themeComboBox = new JComboBox(new DefaultComboBoxModel<>(Theme.values()));
 			themeComboBox.setSelectedIndex(Theme.valueOf(Main.properties.getProperty("theme", Theme.ONE_DARK.name())).ordinal());
 			themeComboBox.addActionListener(e -> {
-				((Theme) themeComboBox.getSelectedItem()).setTheme();
 				themeChanged = true;
 			});
 			GridBagConstraints gbc_lblNewLabel_13 = new GridBagConstraints();
@@ -1216,8 +1215,6 @@ public class MainFrame extends JFrame {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				saveSettings();
-				if(themeChanged)
-					Main.openFrame();
 				JOptionPane.showMessageDialog(Main.frame, "Settings saved!", "Info", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
@@ -1368,6 +1365,8 @@ public class MainFrame extends JFrame {
 		Main.properties.setProperty("optimize", String.valueOf(optimizeCheckbox.isSelected()));
 		Main.properties.setProperty("hologramLineSpacing", String.valueOf(lineSpacingSpinner.getValue()));
 		Main.properties.setProperty("theme", ((Theme) themeComboBox.getSelectedItem()).name());
+		if(themeChanged)
+			((Theme) themeComboBox.getSelectedItem()).setTheme();
 		Main.saveProperties();
 	}
 	
