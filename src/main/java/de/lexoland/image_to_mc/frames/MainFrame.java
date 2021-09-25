@@ -256,6 +256,7 @@ public class MainFrame extends JFrame {
 		browse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser chooser = new JFileChooser();
+				chooser.getActionMap().get("viewTypeDetails").actionPerformed(null);
 				chooser.setAcceptAllFileFilterUsed(false);
 				chooser.addChoosableFileFilter(new FileFilter() {
 					@Override
@@ -613,6 +614,7 @@ public class MainFrame extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser chooser = new JFileChooser();
+				chooser.getActionMap().get("viewTypeDetails").actionPerformed(null);
 				chooser.setSelectedFile(new File("unnamed.mcfunction"));
 				chooser.setAcceptAllFileFilterUsed(false);
 				chooser.addChoosableFileFilter(new FileFilter() {
@@ -778,6 +780,7 @@ public class MainFrame extends JFrame {
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser chooser = new JFileChooser();
+				chooser.getActionMap().get("viewTypeDetails").actionPerformed(null);
 				chooser.setAcceptAllFileFilterUsed(false);
 				chooser.addChoosableFileFilter(new FileFilter() {
 					@Override
@@ -925,6 +928,7 @@ public class MainFrame extends JFrame {
 		JButton btnNewButton_5 = new JButton("Browse");
 		btnNewButton_5.addActionListener(e -> {
 			JFileChooser chooser = new JFileChooser();
+			chooser.getActionMap().get("viewTypeDetails").actionPerformed(null);
 			chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 			chooser.setAcceptAllFileFilterUsed(false);
 			if(chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION)
@@ -1007,6 +1011,7 @@ public class MainFrame extends JFrame {
 		JButton btnNewButton_6 = new JButton("Browse");
 		btnNewButton_6.addActionListener(e -> {
 			JFileChooser chooser = new JFileChooser();
+			chooser.getActionMap().get("viewTypeDetails").actionPerformed(null);
 			chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 			chooser.setAcceptAllFileFilterUsed(false);
 			if(chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION)
