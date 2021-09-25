@@ -59,6 +59,8 @@ public class RescaleDialog extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
+    private boolean changing = false;
+
     private void initSpinners() {
         widthSpinner.setModel(new SpinnerNumberModel(rescale.getWidth(), 1, Integer.MAX_VALUE, 10));
         heightSpinner.setModel(new SpinnerNumberModel(rescale.getHeight(), 1, Integer.MAX_VALUE, 10));
@@ -70,11 +72,12 @@ public class RescaleDialog extends JDialog {
                 txtWidth.setCaretPosition(txtWidth.getText().length());
             } catch (ParseException ignore) {}
         }));
-
         widthSpinner.addChangeListener(e -> {
-            if(keepAspectRatioCheckBox.isSelected()) {
+            if(keepAspectRatioCheckBox.isSelected() && !changing) {
+                changing = true;
                 float val = (float) (int) widthSpinner.getValue() / (float) rescale.getRatioHeight();
                 heightSpinner.setValue(Math.round(val * rescale.getRatioHeight()));
+                changing = false;
             }
         });
 
@@ -87,9 +90,11 @@ public class RescaleDialog extends JDialog {
         }));
         ((NumberFormatter) txtHeight.getFormatter()).setAllowsInvalid(false);
         heightSpinner.addChangeListener(e -> {
-            if(keepAspectRatioCheckBox.isSelected()) {
+            if(keepAspectRatioCheckBox.isSelected() && !changing) {
+                changing = true;
                 float val = (float) (int) heightSpinner.getValue() / (float) rescale.getRatioHeight();
                 widthSpinner.setValue(Math.round(val * rescale.getRatioWidth()));
+                changing = false;
             }
         });
     }

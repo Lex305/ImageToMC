@@ -240,7 +240,7 @@ public class GifConverter {
 		    try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(createFunction), StandardCharsets.UTF_8))) {
 		    	writer.write("# ");
 		    	writer.newLine();
-		    	writer.write("# This will create a new hologram");
+		    	writer.write("# Creates a new hologram");
 		    	writer.newLine();
 		    	writer.write("# ");
 		    	writer.newLine();
@@ -261,7 +261,7 @@ public class GifConverter {
 		    try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(nextFrameFunction), StandardCharsets.UTF_8))) {
 		    	writer.write("# ");
 		    	writer.newLine();
-		    	writer.write("# This will jump to the next frame and will update the hologram");
+		    	writer.write("# Jumps to the next frame and will update the hologram");
 		    	writer.newLine();
 		    	writer.write("# ");
 		    	writer.newLine();

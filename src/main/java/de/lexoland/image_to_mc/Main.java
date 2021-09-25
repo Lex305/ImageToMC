@@ -206,7 +206,7 @@ public class Main {
 	public static Properties propertiesDefaults = new Properties();
 	static {
 		propertiesDefaults.setProperty("character", "█");
-		propertiesDefaults.setProperty("optimize", "false");
+		propertiesDefaults.setProperty("optimize", "true");
 		propertiesDefaults.setProperty("hologramLineSpacing", "0.225");
 		propertiesDefaults.setProperty("theme", Theme.ONE_DARK.name());
 	}

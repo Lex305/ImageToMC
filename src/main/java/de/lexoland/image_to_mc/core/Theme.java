@@ -7,6 +7,13 @@ import javax.swing.*;
 
 public enum Theme {
 
+    SYSTEM("System", () -> {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+    }),
     ONE_DARK("One Dark", FlatOneDarkIJTheme::setup),
     DARK_PURPLE("Dark purple", FlatDarkPurpleIJTheme::setup),
     GRAY("Gray", FlatGrayIJTheme::setup),
